@@ -75,7 +75,6 @@
             display: flex;
         }
     </style>
-    <script src="./javascripts/travel.js" defer></script>
 </head>
 <body>
     <!-- 表單 -->
@@ -112,10 +111,15 @@
     </form>
         <div class="box" id="attractionsList"></div>
         <div class="box" id="selectedAttractions"></div>
-        <button id="save" type="submit">儲存</button>
+        <button id="save">儲存</button>
     <!-- 住宿地點 -->
      <h2>Booking</h2>
     <a id="booking_city" href="https://www.booking.com/searchresults.zh-tw.html?ss=台北&lang=zh-tw&checkin=2024-12-06&checkout=2024-12-07&group_adults=2&no_rooms=1&group_children=0" target="_blank">選擇住宿</a>
     <a href="https://secure.booking.com/mytrips.zh-tw.html" target="_blank">我的訂單</a>
+    
+    <!-- JavaScripts -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="./javascripts/travel.js"></script>
+    <script src="./javascripts/api.js"></script>
 </body>
 </html>
