@@ -1,8 +1,70 @@
-body {
-  padding: 50px;
-  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+
+/* 表格基本樣式 */
+table {
+    border-collapse: collapse; /* 讓邊框合併 */
+    margin-top: 20px;
+    font-family: Arial, sans-serif; /* 字體 */
 }
 
-a {
-  color: #00B7FF;
+/* 表格標題行 */
+thead {
+    background-color: #f2f2f2; /* 淺灰色背景 */
+    color: #333; /* 標題文字顏色 */
+}
+
+thead th {
+    padding: 12px;
+    text-align: left;
+    border: 1px solid #ddd; /* 邊框顏色 */
+    font-size: 16px;
+}
+
+/* 表格資料行 */
+tbody td {
+    padding: 12px;
+    border: 1px solid #ddd;
+    font-size: 14px;
+    text-align: left;
+}
+
+/* 表格行 hover 效果 */
+tbody tr:hover {
+    background-color: #f9f9f9; /* 鼠標懸停時改變行背景色 */
+}
+
+/* 添加捲動條 */
+td p {
+    max-height: 100px;
+    overflow-y: auto;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 5px;
+}
+
+/* 操作按鈕 */
+button.addAttraction {
+    background-color: #4CAF50; /* 綠色背景 */
+    color: white;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button.addAttraction:hover {
+    background-color: #45a049; /* 滑鼠懸停時的背景顏色 */
+}
+
+/* 提升表格的可讀性 */
+td a {
+    color: #007BFF;
+    text-decoration: none;
+}
+
+td a:hover {
+    text-decoration: underline;
+}
+.box{
+    display: flex;
 }

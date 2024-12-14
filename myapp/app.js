@@ -3,6 +3,7 @@ var express = require('express');
 var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
+
 //connect to database
 const mongoose = require('mongoose');
 mongoose.connect("mongodb+srv://weber:lyRr2pR6gPGJnr1w@cluster0.nzuuf.mongodb.net/travelDB?retryWrites=true&w=majority&appName=Cluster0")
@@ -16,6 +17,7 @@ mongoose.connect("mongodb+srv://weber:lyRr2pR6gPGJnr1w@cluster0.nzuuf.mongodb.ne
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var selectedAttractions = require('./routes/selectedAttractions');
+var essentialItems = require('./routes/essentialItems');
 
 var app = express();
 
@@ -33,7 +35,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/selectedAttractions',selectedAttractions);
-
+app.use('/essentialItems', essentialItems);
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
   next(createError(404));

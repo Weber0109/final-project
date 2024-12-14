@@ -1,0 +1,12 @@
+[
+  { "Name": "護照", "IsBring": false },
+  { "Name": "手機充電器", "IsBring": false },
+  { "Name": "錢包", "IsBring": false },
+  { "Name": "牙刷", "IsBring": false },
+  { "Name": "牙膏", "IsBring": false },
+  { "Name": "毛巾", "IsBring": false },
+  { "Name": "換洗衣物", "IsBring": false },
+  { "Name": "行動電源", "IsBring": false },
+  { "Name": "雨傘", "IsBring": false },
+  { "Name": "藥品", "IsBring": false }
+]
