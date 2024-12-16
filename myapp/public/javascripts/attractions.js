@@ -20,10 +20,10 @@ function displayAttractions(attractions){
     table.innerHTML = `
         <thead>
             <tr>
-                <th>名稱</th>
-                <th>描述</th>
-                <th>導航</th>
-                <th>操作</th>
+                <th style="width: 10%;">名稱</th>
+                <th style="width: 70%;">描述</th>
+                <th style="width: 10%;">導航</th>
+                <th style="width: 10%;">操作</th>
             </tr>
         </thead>
         <tbody></tbody>
@@ -87,10 +87,10 @@ function displaySelectedAttractions(selectedAttractions) {
     table.innerHTML = `
         <thead>
             <tr>
-                <th>名稱</th>
-                <th>描述</th>
-                <th>導航</th>
-                <th>操作</th>
+                <th style="width: 10%;">名稱</th>
+                <th style="width: 70%;">描述</th>
+                <th style="width: 10%;">導航</th>
+                <th style="width: 10%;">操作</th>
             </tr>
         </thead>
         <tbody></tbody>
