@@ -8,5 +8,6 @@
   { "Name": "換洗衣物", "IsBring": false },
   { "Name": "行動電源", "IsBring": false },
   { "Name": "雨傘", "IsBring": false },
+  { "Name": "旅遊指南", "IsBring": false },
   { "Name": "藥品", "IsBring": false }
 ]
