@@ -1,61 +1,66 @@
-
-/* 表格基本樣式 */
 table {
-    border-collapse: collapse; /* 讓邊框合併 */
-    font-family: Arial, sans-serif; /* 字體 */
+    border-collapse: collapse; 
+    font-family: Arial, sans-serif; 
+    width: 100%;
+    table-layout: fixed;
+    background-color: #fff; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }
-
-/* 表格標題行 */
 thead {
-    background-color: #f2f2f2; /* 淺灰色背景 */
-    color: #333; /* 標題文字顏色 */
+    background-color: #007BFF;
+    color: white; 
 }
 
 thead th {
     padding: 12px;
     text-align: left;
-    border: 1px solid #ddd; /* 邊框顏色 */
+    border: 1px solid #ddd; 
     font-size: 16px;
+    
 }
-
-/* 表格資料行 */
 tbody td {
     padding: 12px;
     border: 1px solid #ddd;
     font-size: 14px;
     text-align: left;
+    
 }
 
-/* 表格行 hover 效果 */
+
 tbody tr:hover {
-    background-color: #f9f9f9; /* 鼠標懸停時改變行背景色 */
+    background-color: #f2f9ff; 
 }
 
-/* 添加捲動條 */
+
 td p {
     max-height: 100px;
     overflow-y: auto;
     word-wrap: break-word;
     margin: 0;
     padding: 5px;
+
 }
 
-/* 操作按鈕 */
-button.addAttraction {
-    background-color: #4CAF50; /* 綠色背景 */
-    color: white;
+button {
+    font-size: 14px;
     padding: 8px 16px;
-    border: none;
     border-radius: 5px;
+    border: 1px solid transparent;
     cursor: pointer;
+}
+
+button#save {
+    background-color: #007BFF; 
+    color: white;
+    border: none;
     transition: background-color 0.3s ease;
 }
 
-button.addAttraction:hover {
-    background-color: #45a049; /* 滑鼠懸停時的背景顏色 */
+button#save:hover {
+    background-color: #0056b3; 
 }
 
-/* 提升表格的可讀性 */
+
 td a {
     color: #007BFF;
     text-decoration: none;
@@ -64,27 +69,102 @@ td a {
 td a:hover {
     text-decoration: underline;
 }
-.box{
+
+
+form {
+    background-color: white; 
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; 
+    align-items: center;
+}
+
+form label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+form input, form select, form button {
+    padding: 8px 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+form button {
+    background-color: #007BFF;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+form button:hover {
+    background-color: #0056b3;
+}
+.box {
+    margin-top: 20px;
     box-sizing: border-box;
     text-align: justify;
-    font-size: 20px;
+    font-size: 18px; 
+    line-height: 1.6;
     height: 700px;
-    border: 1px solid;
+    border: 1px solid #ddd;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     width: 33%;     
     float: left;   
     position: relative;
-    overflow: scroll;
-   
+    overflow-y: scroll;
+    background-color: #f9f9f9; 
+    padding: 15px; 
     
 }
-.booking{
+.box::-webkit-scrollbar {
+    width: 8px;
+}
+.box::-webkit-scrollbar-thumb {
+    background-color: #ccc;
+    border-radius: 4px;
+}
+.box::-webkit-scrollbar-thumb:hover {
+    background-color: #999;
+}
+
+.booking {
     box-sizing: border-box;
     text-align: justify;
     border: 1px outset;
-    padding:5px;
+    padding: 15px;
+    background-color: white;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.booking a {
+    display: inline-block;
+    padding: 8px 12px;
+    margin: 5px 0;
+    color: white;
+    background-color: #007BFF; 
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.booking a:hover {
+    background-color: #0056b3; 
 }
 @media (max-width: 600px) {
     .box {
         width: 100%;
+        margin-top: 20px;
+    }
+    form {
+        flex-direction: column; 
+        gap: 10px;
     }
 }
