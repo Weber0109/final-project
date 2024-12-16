@@ -7,8 +7,10 @@
     <link rel="stylesheet" href="./stylesheets/style.css">
 </head>
 <body>
+    
     <!-- 表單 -->
     <form id="travelForm" action="#">
+        <h1>旅遊規劃助手</h1>
         <select id="citySelector">
             <option value="基隆市">基隆市</option>
             <option value="新北市">新北市</option>
@@ -38,23 +40,24 @@
         <label for="endDate">結束日期：</label>
         <input type="date" id="endDate" name="endDate" required>
         <button type="submit" id="submit">送出</button>
-        <button id="save">儲存</button>
     </form>
     
-        <div class="box" id="attractionsDiv"></div>
+        <div class="box" id="attractionsDiv">
+            <div>scrollDiv</div>
+        </div>
         <div class="box" id="selectedAttractionsDiv"></div> 
     <!-- 住宿地點 -->
      <div class="box">
-     <div class="booking">
-     <h2>Booking</h2>
-     <div id="booking">
-        <a id="booking_city" href="https://www.booking.com/searchresults.zh-tw.html?ss=台北&lang=zh-tw&checkin=2024-12-06&checkout=2024-12-07&group_adults=2&no_rooms=1&group_children=0" target="_blank">選擇住宿</a>
-        <a href="https://secure.booking.com/mytrips.zh-tw.html" target="_blank">我的訂單</a>
-     </div>
-    </div>
-    <!-- checkbox -->
-     <h2>必備物品</h2>
-     <div id="essentialItemsDiv"></div>
+        <div class="booking">
+            <h2>住宿</h2>
+            <div id="booking">
+                <a id="booking_city" href="https://www.booking.com/searchresults.zh-tw.html?ss=台北&lang=zh-tw&checkin=2024-12-06&checkout=2024-12-07&group_adults=2&no_rooms=1&group_children=0" target="_blank">選擇住宿</a>
+                <a href="https://secure.booking.com/mytrips.zh-tw.html" target="_blank">訂單紀錄</a>
+            </div>
+        </div>
+        <!-- checkbox -->
+        <h2>必備物品</h2>
+        <div id="essentialItemsDiv"></div>
     </div>
     <!-- 儲存 -->
      

@@ -36,12 +36,11 @@ function displayEssentialItems(items) {
         checkbox.type = 'checkbox';
         checkbox.id = item.Name; // 用名稱作為 id
         checkbox.checked = item.IsBring; // 根據 IsBring 決定是否勾選
-        
         const label = document.createElement('label');
         label.setAttribute('for', item.Name);
         label.textContent = item.Name; // 顯示項目名稱
-        
         checkboxContainer.appendChild(checkbox);
+        
         checkboxContainer.appendChild(label);
 
         essentialItemsDiv.appendChild(checkboxContainer);
@@ -49,6 +48,8 @@ function displayEssentialItems(items) {
         // 綁定 checkbox 變更事件
         checkbox.addEventListener('change', () => {
             item.IsBring = checkbox.checked; // 更新 IsBring 的值
+            // save essentialItems
+            postEssentialItems();
             console.log(`${item.Name} 的 IsBring 更新為: ${item.IsBring}`);
         });
     });

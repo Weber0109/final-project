@@ -17,23 +17,13 @@ $('form').submit((event) => {
     personCount = document.getElementById("personCount").value;
     startDate = document.getElementById("startDate").value;
     endDate = document.getElementById("endDate").value;
+    //save travelInfo
+    postTravelInfo();
     //限制時間
     //TODOs
     fetchAttractions(city);
     // booking連結
     setBooking();
-});
-$('#save').click(function() {
-    console.log("click");
-    //save travelInfo
-    postTravelInfo();
-    //save attractions
-    postAttractions();
-    // save selectedAttractions
-    postSelectedAttractions();
-    // save essentialItems
-    postEssentialItems();
-    window.alert("儲存成功");
 });
 function setBooking(){
     let city2 = city;

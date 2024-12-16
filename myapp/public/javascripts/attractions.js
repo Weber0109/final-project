@@ -18,6 +18,8 @@ function fetchAttractions(city){
     .then(data => {
         console.log("here: ",data);
         attractions = data[city] ||[];
+        //save attractions
+        postAttractions();
         displayAttractions(attractions);
     })
     .catch(error => console.error('Error fetching attractions:', error));
@@ -35,12 +37,13 @@ function displayAttractions(attractions){
                 <th style="width: 10%;">名稱</th>
                 <th style="width: 70%;">描述</th>
                 <th style="width: 10%;">導航</th>
-                <th style="width: 10%;">操作</th>
+                <th style="width: 10%;">收藏</th>
             </tr>
         </thead>
         <tbody></tbody>
     `;
     // 將表格加入到 #attractionsList 這個 div 中
+    attractionsLDiv.innerHTML = `<h2>十大必去景點</h2>`;
     attractionsLDiv.appendChild(table);
     const tbody = table.querySelector('tbody');
 
@@ -55,19 +58,21 @@ function displayAttractions(attractions){
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${attraction.Name}</td>
-            <td><p>${attraction.Description}</p></td>
-            <td>
-                <a href="https://www.google.com/maps/dir/?api=1&destination=${attraction.Py},${attraction.Px}" target="_blank">map</a>
+            <td><p class="scrollbar">${attraction.Description}</p></td>
+            <td style="padding:0px;">
+                <a style="display: flex; justify-content:center;" href="https://www.google.com/maps/dir/?api=1&destination=${attraction.Py},${attraction.Px}" target="_blank"><img style="width:25px; height:25px" src="./images/google-maps.png"></a>
             </td>
-            <td>
-                <button class="addAttraction">新增</button>
+            <td style="padding:0px;">
+                <div class="addAttraction" style="display: flex; justify-content:center;"><img style="width:25px; height:25px" src="./images/heart.png"></div>   
             </td>
         `;
 
         row.querySelector('.addAttraction').addEventListener('click', () => {
             selectedAttractions.push(attraction);
             row.remove(); // 從表格中移除該列
-            displayAttractions(attractions);//bug
+            // save selectedAttractions
+            postSelectedAttractions();
+            displayAttractions(attractions);
             displaySelectedAttractions(selectedAttractions);
         });
         tbody.appendChild(row);
@@ -103,7 +108,7 @@ function displaySelectedAttractions(selectedAttractions) {
                 <th style="width: 10%;">名稱</th>
                 <th style="width: 70%;">描述</th>
                 <th style="width: 10%;">導航</th>
-                <th style="width: 10%;">操作</th>
+                <th style="width: 10%;">刪除</th>
             </tr>
         </thead>
         <tbody></tbody>
@@ -114,12 +119,12 @@ function displaySelectedAttractions(selectedAttractions) {
         const row = document.createElement('tr');
         row.innerHTML = `
             <td>${attraction.Name}</td>
-            <td><p>${attraction.Description}</p></td>
-            <td>
-                <a href="https://www.google.com/maps/search/?q=${attraction.Py},${attraction.Px}" target="_blank">map</a>
+            <td><p class="scrollbar">${attraction.Description}</p></td>
+            <td style="padding:0px;">
+                <a style="display: flex; justify-content:center;" href="https://www.google.com/maps/search/?q=${attraction.Py},${attraction.Px}" target="_blank"><img style="width:25px; height:25px" src="./images/google-maps.png"></a>
             </td>
-            <td>
-                <button class="deleteAttraction" data-index="${index}">刪除</button>
+            <td style="padding:0px;">
+                <div style="display: flex; justify-content:center;" class="deleteAttraction" data-index="${index}"><img style="width:25px; height:25px" src="./images/delete.png"></div>
             </td>
         `;
         tbody.appendChild(row);
@@ -127,6 +132,7 @@ function displaySelectedAttractions(selectedAttractions) {
 
     // 清空已顯示的內容並插入新的表格
     selectedAttractionsDiv.innerHTML = ''; // 清空目前的景點
+    selectedAttractionsDiv.innerHTML = '<h2>收藏景點</h2>'
     selectedAttractionsDiv.appendChild(table); // 顯示更新後的表格
 
     // 綁定刪除按鈕的事件
@@ -135,7 +141,9 @@ function displaySelectedAttractions(selectedAttractions) {
         button.addEventListener('click', (e) => {
             const index = e.target.getAttribute('data-index'); // 取得要刪除的景點索引
             deleteSelectedAttractions(index);
-            displayAttractions(attractions);//bug
+            // save selectedAttractions
+            postSelectedAttractions();
+            displayAttractions(attractions);
             displaySelectedAttractions(getSelectedAttractions()); // 更新顯示
         });
     });
