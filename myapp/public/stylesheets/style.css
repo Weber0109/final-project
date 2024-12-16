@@ -2,7 +2,6 @@
 /* 表格基本樣式 */
 table {
     border-collapse: collapse; /* 讓邊框合併 */
-    margin-top: 20px;
     font-family: Arial, sans-serif; /* 字體 */
 }
 
@@ -66,5 +65,26 @@ td a:hover {
     text-decoration: underline;
 }
 .box{
-    display: flex;
+    box-sizing: border-box;
+    text-align: justify;
+    font-size: 20px;
+    height: 700px;
+    border: 1px solid;
+    width: 33%;     
+    float: left;   
+    position: relative;
+    overflow: scroll;
+   
+    
+}
+.booking{
+    box-sizing: border-box;
+    text-align: justify;
+    border: 1px outset;
+    padding:5px;
+}
+@media (max-width: 600px) {
+    .box {
+        width: 100%;
+    }
 }
