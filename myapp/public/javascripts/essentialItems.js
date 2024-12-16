@@ -16,7 +16,7 @@ function fetchEssentialItems() {
                     .catch(error => console.error("載入 JSON 資料失敗:", error));
             } else {
                 essentialItems = data;  // 如果有資料，直接使用從伺服器獲得的資料
-                console.log("從伺服器獲取資料：", essentialItems);
+                console.log("essentialItems: ", essentialItems);
                 displayEssentialItems(essentialItems);
             }
         })

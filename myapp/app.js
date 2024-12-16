@@ -16,6 +16,8 @@ mongoose.connect("mongodb+srv://weber:lyRr2pR6gPGJnr1w@cluster0.nzuuf.mongodb.ne
 // require router
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var travelInfo = require('./routes/travelInfo');
+var attractions = require('./routes/attractions');
 var selectedAttractions = require('./routes/selectedAttractions');
 var essentialItems = require('./routes/essentialItems');
 
@@ -34,6 +36,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 // use router
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
+app.use('/travelInfo', travelInfo);
+app.use('/attractions', attractions);
 app.use('/selectedAttractions',selectedAttractions);
 app.use('/essentialItems', essentialItems);
 // catch 404 and forward to error handler

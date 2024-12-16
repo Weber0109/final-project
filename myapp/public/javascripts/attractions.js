@@ -1,10 +1,22 @@
 let attractions = [];
 let selectedAttractions = [];
 
+async function getDBAttractions(){
+    try {
+        const response = await fetch("/attractions", { method: 'GET' });
+        const data = await response.json(); // 等待解析 JSON
+        attractions = data;
+        displayAttractions(attractions);
+    } catch (err) {
+        console.error("error get DB attractions:", err);
+    }
+}
+
 function fetchAttractions(city){
     fetch('attractions.json')
     .then(response => response.json())
     .then(data => {
+        console.log("here: ",data);
         attractions = data[city] ||[];
         displayAttractions(attractions);
     })
@@ -69,7 +81,8 @@ async function fetchSelectedAttractions() {
         const response = await fetch("/selectedAttractions", { method: 'GET' });
         const data = await response.json(); // 等待解析 JSON
         selectedAttractions = data;
-        displaySelectedAttractions(data);  // 顯示資料
+        displayAttractions(attractions);
+        displaySelectedAttractions(selectedAttractions);
     } catch (err) {
         console.error("error fetch selected attractions:", err);
     }
@@ -129,10 +142,30 @@ function displaySelectedAttractions(selectedAttractions) {
 }
 function postSelectedAttractions(){
     $.ajax({
-        url: '/selectedAttractions/update-attractions',
+        url: '/selectedAttractions/update-selected-attractions',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify(selectedAttractions), 
+        success: function(response) {
+            if (response.success) {
+                //alert('資料儲存成功！');
+            } else {
+                //alert('資料儲存失敗，請稍後再試！');
+            }
+        },
+        error: function(xhr, status, error) {
+            console.log('錯誤:', error);
+            alert('發送請求時發生錯誤');
+        }
+    });
+}
+
+function postAttractions(){
+    $.ajax({
+        url: '/attractions/update-attractions',
+        type: 'POST',
+        contentType: 'application/json',
+        data: JSON.stringify(attractions), 
         success: function(response) {
             if (response.success) {
                 //alert('資料儲存成功！');
