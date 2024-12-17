@@ -9,7 +9,7 @@ function fetchEssentialItems() {
                 fetch('essentialItems.json')
                     .then(response => response.json())
                     .then(jsonData => {
-                        console.log("No essentialItems in DB, load 'essentialItems.json': ", essentialItems);
+                        console.log("No essentialItems in DB, load 'essentialItems.json': ", jsonData);
                         essentialItems = jsonData;
                         displayEssentialItems(essentialItems);
                     })
@@ -25,25 +25,46 @@ function fetchEssentialItems() {
         });
 }
 function displayEssentialItems(items) {
-    const essentialItemsDiv = document.getElementById('essentialItemsDiv');
-    essentialItemsDiv.innerHTML = ''; // 清空目前顯示的內容
-
+    const essentials = document.getElementById("essentials");
+    const personal = document.getElementById("personal");
+    const electronics = document.getElementById("electronics");
+    const medications = document.getElementById("medications");
+    const others = document.getElementById("others");
+    
+    essentials.innerHTML = "";
+    personal.innerHTML = "";
+    electronics.innerHTML = "";
+    medications.innerHTML = "";
+    others.innerHTML = "";
     items.forEach(item => {
         // 建立 checkbox 和 label
-        const checkboxContainer = document.createElement('div');
-        
         const checkbox = document.createElement('input');
         checkbox.type = 'checkbox';
         checkbox.id = item.Name; // 用名稱作為 id
         checkbox.checked = item.IsBring; // 根據 IsBring 決定是否勾選
         const label = document.createElement('label');
+        const span = document.createElement('span');
         label.setAttribute('for', item.Name);
         label.textContent = item.Name; // 顯示項目名稱
-        checkboxContainer.appendChild(checkbox);
-        
-        checkboxContainer.appendChild(label);
-
-        essentialItemsDiv.appendChild(checkboxContainer);
+        span.appendChild(checkbox);
+        span.appendChild(label);
+        switch(item.Category){
+            case "essentials":
+                essentials.appendChild(span);
+                break;
+            case "personal":
+                personal.appendChild(span);
+                break;
+            case "electronics": 
+                electronics.appendChild(span);
+                break;
+            case "medications": 
+                medications.appendChild(span);
+                break; 
+            default:
+                others.appendChild(span);
+                break;
+        }
 
         // 綁定 checkbox 變更事件
         checkbox.addEventListener('change', () => {

@@ -5,6 +5,7 @@ const router = express.Router();
 // define schema
 const essentialItemSchema = new mongoose.Schema({
   Name: String,
+  Category: String,
   IsBring: Boolean
 });
 // create model
