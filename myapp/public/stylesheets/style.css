@@ -74,7 +74,7 @@ td a:hover {
 
 form {
     background-color: white; 
-    padding: 20px;
+    padding: 15px;
     border: 1px solid #ddd;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
@@ -114,29 +114,36 @@ form button:hover {
     text-align: justify;
     font-size: 18px; 
     line-height: 1.6;
-    height: 700px;
+    height: 85vh;
     border: 1px solid #ddd;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
     width: 33%;     
     float: left;   
     position: relative;
-    overflow-y: scroll;
     background-color: #f9f9f9; 
     padding: 15px; 
     
 }
-.box::-webkit-scrollbar {
+/* 滾動條樣式 */
+.scrollTable::-webkit-scrollbar,
+.scrollBring::-webkit-scrollbar {
     width: 8px;
 }
-.box::-webkit-scrollbar-thumb {
+
+.scrollTable::-webkit-scrollbar-thumb,
+.scrollBring::-webkit-scrollbar-thumb {
     background-color: #ccc;
     border-radius: 4px;
 }
-.box::-webkit-scrollbar-thumb:hover {
+
+.scrollTable::-webkit-scrollbar-thumb:hover,
+.scrollBring::-webkit-scrollbar-thumb:hover {
     background-color: #999;
 }
 
+
 .booking {
+    height: 15%;
     box-sizing: border-box;
     text-align: justify;
     border: 1px outset;
@@ -147,6 +154,8 @@ form button:hover {
 
 .booking a {
     display: inline-block;
+    position: relative;
+    left: 170px;
     padding: 8px 12px;
     margin: 5px 0;
     color: white;
@@ -162,6 +171,10 @@ form button:hover {
 h1{
     margin-block-start: 0em;
     margin-block-end: 0em;
+}
+#booking-title{
+    display: inline;
+    justify-content: center;
 }
 
 @media (max-width: 600px) {
@@ -184,12 +197,32 @@ h1{
     width: 10px;
     }
     &::-webkit-scrollbar-track {
-      background-color: #e5e5e5;
+      background-color: #f9f9f9;
       border-radius: 10px;
       margin: 0px 10px;
     }
     &::-webkit-scrollbar-thumb{
       border-radius: 10px;
-      background-color: #616161d4;
+      background-color: #ccc;
     }
+}
+h2{
+    margin-block-start: 0.3em;
+    margin-block-end: 0.3em;
+}
+.scrollTable{
+    border: 2px solid #ddd;
+    height: 80%;
+    overflow-y: scroll;
+}
+.scrollBring{
+    height: 80%;
+    overflow-y: scroll;
+}
+.essentialItems{
+    border: 2px solid #ddd;
+    height: 80%;
+}
+.form{
+    height: 10vh;
 }

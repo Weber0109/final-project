@@ -43,7 +43,9 @@ function displayAttractions(attractions){
         <tbody></tbody>
     `;
     // 將表格加入到 #attractionsList 這個 div 中
-    attractionsLDiv.innerHTML = `<h2>十大必去景點</h2>`;
+    if(city != undefined){
+        document.getElementById("city").innerHTML = city+" ";
+    }
     attractionsLDiv.appendChild(table);
     const tbody = table.querySelector('tbody');
 
@@ -132,7 +134,7 @@ function displaySelectedAttractions(selectedAttractions) {
 
     // 清空已顯示的內容並插入新的表格
     selectedAttractionsDiv.innerHTML = ''; // 清空目前的景點
-    selectedAttractionsDiv.innerHTML = '<h2>收藏景點</h2>'
+    
     selectedAttractionsDiv.appendChild(table); // 顯示更新後的表格
 
     // 綁定刪除按鈕的事件
