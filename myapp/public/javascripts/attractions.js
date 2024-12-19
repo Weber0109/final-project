@@ -34,10 +34,10 @@ function displayAttractions(attractions){
     table.innerHTML = `
         <thead>
             <tr>
-                <th style="width: 10%;">名稱</th>
-                <th style="width: 70%;">描述</th>
-                <th style="width: 10%;">導航</th>
-                <th style="width: 10%;">收藏</th>
+                <th class="name">名稱</th>
+                <th class="description">描述</th>
+                <th>導航</th>
+                <th>收藏</th>
             </tr>
         </thead>
         <tbody></tbody>
@@ -59,13 +59,13 @@ function displayAttractions(attractions){
         }
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${attraction.Name}</td>
-            <td><p class="scrollbar">${attraction.Description}</p></td>
-            <td style="padding:0px;">
-                <a style="display: flex; justify-content:center;" href="https://www.google.com/maps/dir/?api=1&destination=${attraction.Py},${attraction.Px}" target="_blank"><img style="width:25px; height:25px" src="./images/google-maps.png"></a>
+            <td class="name">${attraction.Name}</td>
+            <td class="description"><p class="scrollbar">${attraction.Description}</p></td>
+            <td>
+                <a href="https://www.google.com/maps/dir/?api=1&destination=${attraction.Py},${attraction.Px}" target="_blank"><img src="./images/google-maps.png"></a>
             </td>
-            <td style="padding:0px;">
-                <div class="addAttraction" style="display: flex; justify-content:center;"><img style="width:25px; height:25px" src="./images/heart.png"></div>   
+            <td>
+                <div class="addAttraction"><img src="./images/heart.png"></div>   
             </td>
         `;
 
@@ -107,10 +107,10 @@ function displaySelectedAttractions(selectedAttractions) {
     table.innerHTML = `
         <thead>
             <tr>
-                <th style="width: 10%;">名稱</th>
-                <th style="width: 70%;">描述</th>
-                <th style="width: 10%;">導航</th>
-                <th style="width: 10%;">刪除</th>
+                <th class="name">名稱</th>
+                <th class="description">描述</th>
+                <th>導航</th>
+                <th>刪除</th>
             </tr>
         </thead>
         <tbody></tbody>
@@ -120,13 +120,13 @@ function displaySelectedAttractions(selectedAttractions) {
     selectedAttractions.forEach((attraction, index) => {
         const row = document.createElement('tr');
         row.innerHTML = `
-            <td>${attraction.Name}</td>
-            <td><p class="scrollbar">${attraction.Description}</p></td>
-            <td style="padding:0px;">
-                <a style="display: flex; justify-content:center;" href="https://www.google.com/maps/search/?q=${attraction.Py},${attraction.Px}" target="_blank"><img style="width:25px; height:25px" src="./images/google-maps.png"></a>
+            <td class="name">${attraction.Name}<br>(${attraction.Region})</td>
+            <td class="description"><p class="scrollbar">${attraction.Description}</p></td>
+            <td>
+                <a href="https://www.google.com/maps/search/?q=${attraction.Py},${attraction.Px}" target="_blank"><img src="./images/google-maps.png"></a>
             </td>
-            <td style="padding:0px;">
-                <div style="display: flex; justify-content:center;" class="deleteAttraction" data-index="${index}"><img style="width:25px; height:25px" src="./images/delete.png"></div>
+            <td>
+                <div class="deleteAttraction" data-index="${index}"><img src="./images/delete.png"></div>
             </td>
         `;
         tbody.appendChild(row);

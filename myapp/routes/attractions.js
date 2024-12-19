@@ -7,7 +7,9 @@ const attractionsSchema = new mongoose.Schema({
   Description: String,
   Name: String,
   Px: Number,
-  Py: Number
+  Py: Number,
+  Tags: [String],
+  Region: String
   });
 
 // create model
