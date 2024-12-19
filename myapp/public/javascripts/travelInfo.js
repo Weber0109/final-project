@@ -18,6 +18,7 @@ async function getDBTravelInfo(){
             document.getElementById("startDate").setAttribute("value",`${startDate}`);
             document.getElementById("endDate").setAttribute("value",`${endDate}`);
         }
+        setBooking();
     } catch (err) {
         console.error("error get DB travel DB:", err);
     }

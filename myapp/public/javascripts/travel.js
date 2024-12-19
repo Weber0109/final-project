@@ -2,7 +2,7 @@ const form = document.getElementById("travelForm");
 
 $(document).ready(function () {
     console.log("loading successfully");
-    //get database travelInfo
+    //get database travelInfo and set booking
     getDBTravelInfo();
     //display database selectedAttractions ，一定要先載入selectedAttractions，不然selectedAttractions，不然getDBAttractions()會顯示錯
     fetchSelectedAttractions();

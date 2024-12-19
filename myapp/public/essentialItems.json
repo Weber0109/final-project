@@ -18,7 +18,7 @@
   { "Name": "內衣褲", "Category": "personal", "IsBring": false },
   { "Name": "拖鞋", "Category": "personal", "IsBring": false },
   { "Name": "防曬乳", "Category": "personal", "IsBring": false },
-  { "Name": "防蟲噴霧", "Category": "personal", "IsBring": false },
+  { "Name": "防蚊液", "Category": "personal", "IsBring": false },
   { "Name": "暈車藥", "Category": "medications", "IsBring": false },
   { "Name": "感冒藥", "Category": "medications", "IsBring": false },
   { "Name": "止痛藥", "Category": "medications", "IsBring": false },
