@@ -7,81 +7,88 @@
     <link rel="stylesheet" href="./stylesheets/style.css">
 </head>
 <body>
-    
-    <!-- 表單 -->
-    <div class="form">
-        <form id="travelForm" action="#">
+    <div class="globel-layout">
+        <!-- 表單 -->
+        <div class="form">
             <h1>旅遊規劃助手</h1>
-            <select id="citySelector">
-                <option value="基隆市">基隆市</option>
-                <option value="新北市">新北市</option>
-                <option value="臺北市">臺北市</option>
-                <option value="桃園市">桃園市</option>
-                <option value="新竹縣">新竹縣</option>
-                <option value="苗栗縣">苗栗縣</option>
-                <option value="臺中市">臺中市</option>
-                <option value="彰化縣">彰化縣</option>
-                <option value="南投縣">南投縣</option>
-                <option value="雲林縣">雲林縣</option>
-                <option value="嘉義縣">嘉義縣</option>
-                <option value="臺南市">臺南市</option>
-                <option value="高雄市">高雄市</option>
-                <option value="屏東縣">屏東縣</option>
-                <option value="臺東縣">臺東縣</option>
-                <option value="花蓮縣">花蓮縣</option>
-                <option value="宜蘭縣">宜蘭縣</option>
-                <option value="金門縣">金門縣</option>
-                <option value="連江縣">連江縣</option>
-                <option value="澎湖縣">澎湖縣</option>
-            </select>
-            <label for="personCount">人數：</label>
-            <input id="personCount" type="number" min="1" value="1" placeholder="請輸入人數" required>
-            <label for="startDate">開始日期：</label>
-            <input type="date" id="startDate" name="startDate" min="" required>
-            <label for="endDate">結束日期：</label>
-            <input type="date" id="endDate" name="endDate" required>
-            <button type="submit" id="submit">送出</button>
-        </form>
-    </div>
-    
-    <div class="box">
-         <h2><span id="city"></span>十大必去景點</h2>
-        <div class="scrollTable" id="attractionsDiv"></div>
-    </div>
-    <div class="box">
-        <h2>收藏景點</h2>
-        <div class="scrollTable" id="selectedAttractionsDiv"></div>
-    </div> 
-    <!-- 住宿地點 -->
-     <div class="box">
-        <div class="booking">
-            <h2 id="booking-title">住宿</h2>
-            <a id="booking_city" href="https://www.booking.com/searchresults.zh-tw.html?ss=台北&lang=zh-tw&checkin=2024-12-06&checkout=2024-12-07&group_adults=2&no_rooms=1&group_children=0" target="_blank">選擇住宿</a>
-            <a href="https://secure.booking.com/mytrips.zh-tw.html" target="_blank">訂單紀錄</a>
+            <form id="travelForm" action="#">
+                <select id="citySelector">
+                    <option value="基隆市">基隆市</option>
+                    <option value="新北市">新北市</option>
+                    <option value="臺北市">臺北市</option>
+                    <option value="桃園市">桃園市</option>
+                    <option value="新竹縣">新竹縣</option>
+                    <option value="苗栗縣">苗栗縣</option>
+                    <option value="臺中市">臺中市</option>
+                    <option value="彰化縣">彰化縣</option>
+                    <option value="南投縣">南投縣</option>
+                    <option value="雲林縣">雲林縣</option>
+                    <option value="嘉義縣">嘉義縣</option>
+                    <option value="臺南市">臺南市</option>
+                    <option value="高雄市">高雄市</option>
+                    <option value="屏東縣">屏東縣</option>
+                    <option value="臺東縣">臺東縣</option>
+                    <option value="花蓮縣">花蓮縣</option>
+                    <option value="宜蘭縣">宜蘭縣</option>
+                    <option value="金門縣">金門縣</option>
+                    <option value="連江縣">連江縣</option>
+                    <option value="澎湖縣">澎湖縣</option>
+                </select>
+                <div><label for="personCount">人數：</label>
+                <input id="personCount" type="number" min="1" value="1" placeholder="請輸入人數" required></div>
+                <div><label for="startDate">開始日期：</label>
+                <input type="date" id="startDate" name="startDate" min="" required></div>
+                <div><label for="endDate">結束日期：</label>
+                <input type="date" id="endDate" name="endDate" required></div>
+                <button type="submit" id="submit">送出</button>
+            </form>
+            <!-- 說明文件 -->
+            <a href="./01257003+01257025.pptx">
+                <button id="ppt" type="button">說明文件</button>
+            </a>
         </div>
-        <!-- checkbox -->
-        <div class="essentialItems">
-            <h2>必備清單</h2>
-            <div class="scrollBring" id="essentialItems">
-                <h3>基本用品</h3>
-                <div id="essentials"></div>
-                <h3>個人用品</h3>
-                <div id="personal"></div>
-                <h3>電子設備</h3>
-                <div id="electronics"></div>
-                <h3>醫藥用品</h3>
-                <div id="medications"></div>
-                <div id="others"></div>
+        
+        <div class="box" id="attractions">
+            <h2><span id="city"></span>十大必去景點</h2>
+            <div class="scrollTable" id="attractionsDiv"></div>
+        </div>
+        <div class="box">
+            <h2>收藏景點</h2>
+            <div class="scrollTable" id="selectedAttractionsDiv"></div>
+        </div> 
+        <!-- 住宿地點 -->
+        <div class="box">
+            <div class="booking">
+                <h2 id="booking-title">住宿</h2>
+                <span>
+                    <a id="booking_city" href="https://www.booking.com/searchresults.zh-tw.html?ss=台北&lang=zh-tw&checkin=2024-12-06&checkout=2024-12-07&group_adults=2&no_rooms=1&group_children=0" target="_blank">選擇住宿</a>
+                    <a href="https://secure.booking.com/mytrips.zh-tw.html" target="_blank">訂單紀錄</a>
+                </span>
+            </div>
+            <!-- checkbox -->
+            <div class="essentialItems">
+                <h2>必備清單</h2>
+                <div class="scrollBring" id="essentialItems">
+                    <h3>基本用品</h3>
+                    <div id="essentials"></div>
+                    <h3>個人用品</h3>
+                    <div id="personal"></div>
+                    <h3>電子設備</h3>
+                    <div id="electronics"></div>
+                    <h3>醫藥用品</h3>
+                    <div id="medications"></div>
+                    <div id="others"></div>
+                </div>
             </div>
         </div>
+        <!-- 儲存 -->
+        
+        <!-- JavaScripts -->
+        <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+        <script src="./javascripts/travelInfo.js"></script>
+        <script src="./javascripts/attractions.js"></script>
+        <script src="./javascripts/essentialItems.js"></script>
+        <script src="./javascripts/travel.js"></script>
     </div>
-    <!-- 儲存 -->
-     
-    <!-- JavaScripts -->
-    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
-    <script src="./javascripts/travelInfo.js"></script>
-    <script src="./javascripts/attractions.js"></script>
-    <script src="./javascripts/essentialItems.js"></script>
-    <script src="./javascripts/travel.js"></script>
 </body>
 </html>

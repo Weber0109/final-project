@@ -77,19 +77,12 @@ td a:hover {
     text-decoration: underline;
 }
 
-
-form {
-    background-color: white; 
-    padding: 15px;
-    border: 1px solid #ddd;
-    border-radius: 8px;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+form{
     display: flex;
-    flex-wrap: wrap;
-    gap: 15px; 
-    align-items: center;
+    justify-content: space-between;
+    width: 55%;
+    min-width: 740px;
 }
-
 form label {
     font-weight: bold;
     margin-right: 10px;
@@ -104,7 +97,10 @@ form input, form select, form button {
 }
 
 form button {
-    background-color: #4d93df;
+    font-size:15px;
+    font-weight: bold;
+    width: 65px;
+    background-color: #eba929;
     color: white;
     border: none;
     cursor: pointer;
@@ -112,18 +108,18 @@ form button {
 }
 
 form button:hover {
-    background-color: #0056b3;
+    background-color: #dc9a17;
 }
 .box {
-    margin-top: 20px;
+    margin-top: 1%;
     box-sizing: border-box;
     text-align: justify;
     font-size: 18px; 
     line-height: 1.6;
-    height: 85vh;
+    height: 85%;
     border: 1px solid #ddd;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
-    width: 33%;     
+    width: 33.3%;     
     float: left;   
     position: relative;
     background-color: #f9f9f9; 
@@ -149,38 +145,42 @@ form button:hover {
 
 
 .booking {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     height: 15%;
     box-sizing: border-box;
     text-align: justify;
     border: 1px outset;
-    padding: 15px;
+    padding: 0px 10px;
     background-color: white;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    min-height: 50px;
 }
 
 .booking a {
+    font-size: medium;
+    font-weight: bold;
     display: inline-block;
     position: relative;
-    left: 170px;
     padding: 8px 12px;
     margin: 5px 0;
     color: white;
-    background-color: #4d93df; 
+    background-color: #78abcb; 
     text-decoration: none;
     border-radius: 5px;
     transition: background-color 0.3s ease;
 }
 
 .booking a:hover {
-    background-color: #0056b3; 
+    background-color: #3694cf; 
 }
 h1{
     margin-block-start: 0em;
     margin-block-end: 0em;
 }
 #booking-title{
-    display: inline;
-    justify-content: center;
+    height: auto;
 }
 
 @media (max-width: 600px) {
@@ -223,8 +223,12 @@ h2{
     overflow-y: scroll;
 }
 .scrollBring{
-    height: 80%;
+    height: 85%;
     overflow-y: scroll;
+}
+.scrollBring div{
+    display: flex;
+    flex-wrap: wrap;
 }
 .essentialItems{
     border: 2px solid #ddd;
@@ -233,7 +237,17 @@ h2{
     padding: 10px 0px 10px 10px;
 }
 .form{
-    height: 10vh;
+    background-color: white; 
+    padding: 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px; 
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
 }
 td div, td a{
     display: flex; 
@@ -243,3 +257,92 @@ td div img, td a img{
     width:25px;
     height:25px;
 }
+#personCount{
+    width: 30px;
+}
+.globel-layout{
+    margin: 0px;
+    height: 98vh;
+}
+.container {
+    display: block;
+    position: relative;
+    padding-left: 35px;
+    margin-bottom: 12px;
+    cursor: pointer;
+    font-size: 15px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+/* The container */
+.container {
+    display: block;
+    position: relative;
+    padding-left: 25px; /* Adjust padding */
+    margin-right: 15px;
+    margin-bottom: 10px; /* Adjust margin */
+    cursor: pointer;
+    font-size: 15px; /* Change font-size */
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+  }
+  
+  /* Hide the browser's default checkbox */
+  .container input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+  }
+  
+  /* Create a custom checkbox */
+  .checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+    height: 20px; /* Adjust size */
+    width: 20px; /* Adjust size */
+    background-color: #eee;
+    border: solid 1px #a8a8a8;
+  }
+  
+  /* On mouse-over, add a grey background color */
+  .container:hover input ~ .checkmark {
+    background-color: #ccc;
+  }
+  
+  /* When the checkbox is checked, add a blue background */
+  .container input:checked ~ .checkmark {
+    background-color: #78abcb;
+  }
+  
+  /* Create the checkmark/indicator (hidden when not checked) */
+  .checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+  }
+  
+  /* Show the checkmark when checked */
+  .container input:checked ~ .checkmark:after {
+    display: block;
+  }
+  
+  /* Style the checkmark/indicator */
+  .container .checkmark:after {
+    left: 6px; /* Adjust position */
+    top: 3px; /* Adjust position */
+    width: 4px; /* Adjust size */
+    height: 8px; /* Adjust size */
+    border: solid white;
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+  }

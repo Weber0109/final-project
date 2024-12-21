@@ -44,25 +44,26 @@ function displayEssentialItems(items) {
         checkbox.checked = item.IsBring; // 根據 IsBring 決定是否勾選
         const label = document.createElement('label');
         const span = document.createElement('span');
-        label.setAttribute('for', item.Name);
+        span.setAttribute('class', 'checkmark');
+        label.setAttribute('class','container');
         label.textContent = item.Name; // 顯示項目名稱
-        span.appendChild(checkbox);
-        span.appendChild(label);
+        label.appendChild(checkbox);
+        label.appendChild(span);
         switch(item.Category){
             case "essentials":
-                essentials.appendChild(span);
+                essentials.appendChild(label);
                 break;
             case "personal":
-                personal.appendChild(span);
+                personal.appendChild(label);
                 break;
             case "electronics": 
-                electronics.appendChild(span);
+                electronics.appendChild(label);
                 break;
             case "medications": 
-                medications.appendChild(span);
+                medications.appendChild(label);
                 break; 
             default:
-                others.appendChild(span);
+                others.appendChild(label);
                 break;
         }
 
