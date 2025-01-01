@@ -29,5 +29,5 @@ function setBooking(){
     let city2 = city;
     city2 = city2.replace(/臺/g, "台").slice(0, -1);
     let booking_city = document.getElementById("booking_city");
-    booking_city.setAttribute("href", `https://www.booking.com/searchresults.zh-tw.html?ss=${city2}&lang=zh-tw&checkin=${startDate}&checkout=${endDate}group_adults=${personCount}&no_rooms=1&group_children=0`);
+    booking_city.setAttribute("href", `https://www.booking.com/searchresults.zh-tw.html?ss=${city2}&lang=zh-tw&checkin=${startDate}&checkout=${endDate}&group_adults=${personCount}&no_rooms=1&group_children=0`);
 }
